@@ -1,4 +1,5 @@
 var Twiground = {
+    ratio: .9,
 	url: function(text){
 		var e=/((http|ftp):\/)?\/?([^:\/\s]+)((\/\w+)*\/)([\w\-\.]+\.[^\"#?\s]+)(#[\w\-]+)?/;
 		if (text.match(e)) {
@@ -23,22 +24,7 @@ var Twiground = {
         var img = $("body").css('backgroundImage');
         return this.url(img);
 	},
-    facebox: function(){
-        var link = document.createElement("link");
-        link.media = "screen";
-        link.type = "text/css";
-        link.rel = "stylesheet"
-        link.href = "https://github.com/thiagocaiubi/facebox/raw/master/src/facebox.css";
-        $(link).appendTo(document.head);
-        console.log(link.readyStateChange);
-        
-        var script = document.createElement("script");
-        script.src = "https://github.com/thiagocaiubi/facebox/raw/master/src/facebox.js";
-        $(script).appendTo(document.body);
-        
-    },
     reveal: function(){
-        //this.facebox();
         var image = $("<img src=\""+ this.image() +"\"/>");
         $("<div />")
             .css({
@@ -47,7 +33,11 @@ var Twiground = {
                 top: "0",
                 zIndex: "99999"
             })  
-            .html(image).appendTo(document.body);
+            .html(image)
+            .click(function(){
+                alert(this);
+            })
+            .appendTo(document.body);
     }
 }
 Twiground.reveal();
