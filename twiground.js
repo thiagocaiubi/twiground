@@ -40,7 +40,14 @@ var Twiground = {
     reveal: function(){
         //this.facebox();
         var image = $("<img src=\""+ this.image() +"\"/>");
-        $("<div style=\"position:absolute; left:0;top:0;z-index:99999;\"></div>").html(image).appendTo(document.body);
+        $("<div />")
+            .css({
+                position: "absolute", 
+                left: "0",
+                top: "0",
+                zIndex: "99999"
+            })  
+            .html(image).appendTo(document.body);
     }
 }
 Twiground.reveal();
