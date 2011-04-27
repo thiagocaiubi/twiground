@@ -8,26 +8,18 @@ var Twiground = {
         }
 	},
     createGlobalNavLink: function(){
-        var twiground = $("#global-nav-twiground");
+        var twiground = $("#global-nav-twiground"),
+            pageOuter = $("#page-outer");
         if (twiground) {
-            twiground.remove(); 
+            twiground.remove();
         }
-        $("<li id=\"global-nav-twiground\"><a href=\"#\">Timeline</a></li>").appendTo("#global-nav ul");
-    },
-    toggleBackground: function(){
-        var twitground = $("#global-nav-twiground"),
-            pageOuter = $("#page-outer").slideUp("slow", function(){
-                twitground.click(function(){
-                    pageOuter.slideDown("slow", function(){
-                        twitground.html("Background");
-                    });
-                });
-            });
+        var x = $("<li id=\"global-nav-twiground\"><a href=\"#\">Twiground</a></li>").appendTo("#global-nav ul").click(function(){
+            pageOuter.slideToggle("slow");
+        });
     },
     reveal: function(){
         this.checkTwitter();
         this.createGlobalNavLink();
-        this.toggleBackground();
     }
 };
 Twiground.reveal();
