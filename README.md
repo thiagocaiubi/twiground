@@ -4,6 +4,6 @@
 	That's it! Twiground let's you hide the timeline and view the profile background!
 
 ### How to use:
-(Twiground)[https://github.com/thiagocaiubi/twiground/raw/master/twiground.html]
+[Twiground](https://github.com/thiagocaiubi/twiground/raw/master/twiground.html)
 
 Have fun!!!
